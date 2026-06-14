@@ -14,6 +14,28 @@ seccion.appendChild(card);
 const formulario = document.getElementById('contact-form');
 const contenedorTestimonios = document.getElementById('contenedor-testimonios');
 const estadoFormulario = document.getElementById('form-status');
+const themeToggle = document.getElementById('theme-toggle');
+
+function aplicarTema(theme) {
+    const esOscuro = theme === 'dark';
+    document.body.classList.toggle('dark', esOscuro);
+    if (themeToggle) {
+        themeToggle.textContent = esOscuro ? '☀️ Modo claro' : '🌙 Modo oscuro';
+        themeToggle.setAttribute('aria-label', esOscuro ? 'Activar modo claro' : 'Activar modo oscuro');
+    }
+}
+
+const temaGuardado = localStorage.getItem('theme');
+aplicarTema(temaGuardado || 'light');
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const temaActual = document.body.classList.contains('dark') ? 'dark' : 'light';
+        const nuevoTema = temaActual === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', nuevoTema);
+        aplicarTema(nuevoTema);
+    });
+}
 
 const usuarios = await obtenerUsuarios();
 if (usuarios) {
