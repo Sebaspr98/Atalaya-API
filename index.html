@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atalaya Studio: diseño web creativo y soluciones digitales profesionales. Descubre nuestros servicios y proyectos destacados.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Atalaya Studio | Inicio</title>
+</head>
+<body>
+    <a class="skip-link" href="#inicio">Saltar al contenido</a>
+    <header class="page-header">
+        <div class="container header-inner">
+            <a href="#" class="brand">Atalaya Studio</a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menú</button>
+            <nav role="navigation">
+                <ul id="primary-menu" class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="/contactos.html">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="inicio" role="main">
+        <section class="hero section" role="region" aria-labelledby="hero-title" tabindex="0">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Diseño digital estratégico</span>
+                    <h1 id="hero-title">Creamos experiencias web que conectan marcas con personas.</h1>
+                    <p>Desde una landing elegante hasta un sistema completo, construimos productos claros, rápidos y memorables.</p>
+                    <div class="hero-actions">
+                        <a class="btn" href="#contact">Solicitar propuesta</a>
+                        <a class="btn btn-secondary" href="/contactos.html">Ver mensajes</a>
+                    </div>
+                </div>
+                <div class="hero-card" aria-label="Resumen de servicios">
+                    <h3>¿Qué te ofrecemos?</h3>
+                    <ul>
+                        <li>Diseño UX/UI pensado para convertir</li>
+                        <li>Desarrollo web moderno y accesible</li>
+                        <li>Gestión de formularios y seguimiento de clientes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="section" role="region" aria-labelledby="servicios-title" tabindex="0">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="servicios-title">Servicios</h2>
+                        <p class="section-copy">Soluciones digitales pensadas para marcas que quieren destacar con claridad y estilo.</p>
+                    </div>
+                </div>
+                <div class="grid grid-3">
+                    <article class="feature-card">
+                        <h3>Diseño UX/UI</h3>
+                        <p>Interfaces atractivas, intuitivas y alineadas con tus objetivos de negocio.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Desarrollo web</h3>
+                        <p>Aplicaciones modernas y rápidas, listas para crecer con tu marca.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Optimización</h3>
+                        <p>Mejoramos la experiencia del usuario para que cada visita cuente.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section" role="region" aria-labelledby="testimonios-title" tabindex="0">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="testimonios-title">Lo que dicen los clientes</h2>
+                        <p class="section-copy">Historias reales de marcas que valoran claridad, diseño y resultados.</p>
+                    </div>
+                </div>
+                <div id="contenedor-testimonios" class="grid grid-3"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" role="region" aria-labelledby="contact-title" tabindex="0">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <h2 id="contact-title">Contacto</h2>
+                    <p>¿Tienes un proyecto en mente? Cuéntanos tus ideas y te ayudaremos a convertirlas en una experiencia digital memorable.</p>
+                    <p class="section-copy">Tu mensaje quedará registrado y podrás consultarlo después desde la sección de contactos.</p>
+                </div>
+                <div class="card contact-card">
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="email">Correo electrónico</label>
+                            <input id="email" type="email" name="email" required aria-describedby="ayuda">
+                            <small id="ayuda">Nunca compartiremos tu dirección con terceros.</small>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-full">Enviar mensaje</button>
+                        <p id="form-status" class="form-status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Atalaya Studio</p>
+        </div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

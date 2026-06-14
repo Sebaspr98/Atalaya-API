@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contactos recibidos</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .card { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; }
+    .empty { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Contactos recibidos</h1>
+  <div id="lista-contactos">Cargando...</div>
+
+  <script>
+    async function cargarContactos() {
+      const contenedor = document.getElementById('lista-contactos');
+      try {
+        const respuesta = await fetch('/api/contactos');
+        const contactos = await respuesta.json();
+
+        if (!contactos.length) {
+          contenedor.innerHTML = '<p class="empty">No hay contactos guardados todavía.</p>';
+          return;
+        }
+
+        contenedor.innerHTML = contactos.map(contacto => `
+          <article class="card">
+            <h3>${contacto.nombre}</h3>
+            <p><strong>Email:</strong> ${contacto.email}</p>
+            <p><strong>Mensaje:</strong> ${contacto.mensaje}</p>
+            <p><small>${new Date(contacto.fecha).toLocaleString()}</small></p>
+          </article>
+        `).join('');
+      } catch (error) {
+        contenedor.innerHTML = '<p class="empty">No se pudieron cargar los contactos.</p>';
+      }
+    }
+
+    cargarContactos();
+  </script>
+</body>
+</html>
